@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuickAid: Emergency Triage Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>QuickAid: Emergency Triage Tracker</h1>
+<p>A simple system to register and track patients based on urgency level.</p>
+<section id="about" style="margin-top: 20px;">
+  <h2>About This Project</h2>
+  <p>
+    QuickAid is a prototype Emergency Room Workflow system designed to help hospital staff track incoming patients
+    based on urgency level. It allows patient registration, urgency classification, timestamp logging, and automatic
+    color-coded triage queues. It also saves patient data locally in the browser, so nothing is lost on refresh.
+  </p>
+</section>
+<section id="developer" style="margin-top: 20px;">
+  <h2>Developer</h2>
+  <p><strong>Name:</strong> Faith Chebet Ruto</p>
+  <p><strong>Role:</strong> Student Developer – Diploma in ICT, RVTTI</p>
+  <p><strong>Contact:</strong> <em>(Contact available upon request)</em></p>
+</section>
+
+
+    <form id="patient-form">
+      <label>Patient Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Urgency Level:</label>
+      <select id="urgency">
+        <option value="Critical">Critical</option>
+        <option value="Serious">Serious</option>
+        <option value="Stable">Stable</option>
+      </select>
+
+      <button type="submit">Add Patient</button>
+    </form>
+
+    <h2>Patient Queue</h2>
+    <ul id="patient-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
