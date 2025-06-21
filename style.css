@@ -1,45 +1,106 @@
+/* Overall page */
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f6fc;
   margin: 0;
-  padding: 20px;
-}
-
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-input, select, button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-ul {
-  list-style-type: none;
   padding: 0;
 }
 
-li {
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+form input, form select {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+/* Patient list */
+#patient-list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-left: 6px solid #0066cc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  line-height: 1.6;
+  list-style: none;
+}
+
+/* Status colors */
+.status {
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
   color: white;
 }
 
+.status:contains("Waiting") { background-color: gray; }
+.status:contains("Seen by Doctor") { background-color: orange; }
+.status:contains("Lab Test") { background-color: teal; }
+.status:contains("X-Ray") { background-color: purple; }
+.status:contains("Admitted") { background-color: darkblue; }
+.status:contains("Discharged") { background-color: green; }
+
+/* Color-code urgency */
 .critical {
-  background-color: #e60000;
+  color: red;
+  font-weight: bold;
 }
-
 .serious {
-  background-color: #ff9900;
+  color: orange;
+  font-weight: bold;
+}
+.stable {
+  color: green;
+  font-weight: bold;
 }
 
-.stable {
-  background-color: #2ecc71;
+/* Status dropdown */
+.status-select {
+  margin-top: 10px;
+  padding: 6px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Divider */
+#patient-list li:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
 }

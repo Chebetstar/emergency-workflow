@@ -3,32 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>QuickAid: Emergency Triage Tracker</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>QuickAid: Emergency Triage Tracker</h1>
-<p>A simple system to register and track patients based on urgency level.</p>
-<section id="about" style="margin-top: 20px;">
-  <h2>About This Project</h2>
-  <p>
-    QuickAid is a prototype Emergency Room Workflow system designed to help hospital staff track incoming patients
-    based on urgency level. It allows patient registration, urgency classification, timestamp logging, and automatic
-    color-coded triage queues. It also saves patient data locally in the browser, so nothing is lost on refresh.
-  </p>
-</section>
-<section id="developer" style="margin-top: 20px;">
-  <h2>Developer</h2>
-  <p><strong>Name:</strong> Faith Chebet Ruto</p>
-  <p><strong>Role:</strong> Student Developer – Diploma in ICT, RVTTI</p>
-  <p><strong>Email</strong> <em>chebefaith14@gmail.com</em></p>
-</section>
+    <p>A simple system to register and track patients based on urgency level.</p>
 
+    <section id="about">
+      <h2>About This Project</h2>
+      <p>
+        QuickAid helps hospital staff track incoming patients by urgency level. It registers patients, logs timestamps,
+        tracks status changes, and displays notifications. Data is saved in the browser.
+      </p>
+    </section>
 
+    <section id="developer">
+      <h2>Developer</h2>
+      <p><strong>Name:</strong> Faith Chebet Ruto</p>
+      <p><strong>Role:</strong> Student Developer – Diploma in ICT, RVTTI</p>
+      <p><strong>Email:</strong> chebefaith14@gmail.com</p>
+    </section>
+
+    <!-- FORM -->
     <form id="patient-form">
       <label>Patient Name:</label>
       <input type="text" id="name" required>
+
+      <label>Patient Phone Number:</label>
+      <input type="text" id="phone">
+
+      <label>Contact Person Name:</label>
+      <input type="text" id="contactName">
+
+      <label>Contact Person Phone:</label>
+      <input type="text" id="contactPhone">
 
       <label>Urgency Level:</label>
       <select id="urgency">
@@ -40,8 +49,21 @@
       <button type="submit">Add Patient</button>
     </form>
 
-    <h2>Patient Queue</h2>
-    <ul id="patient-list"></ul>
+    <!-- PRINT & RESET -->
+    <div class="actions">
+      <button onclick="printPatientList()">🖨️ Print Patient List</button>
+      <button onclick="clearAllPatients()">🧼 Clear All Data</button>
+    </div>
+
+    <!-- PATIENT QUEUE -->
+    <div id="print-area">
+      <h2>Patient Queue</h2>
+      <ul id="patient-list"></ul>
+    </div>
+
+    <!-- NOTIFICATION LOG -->
+    <h2>Notification Log</h2>
+    <ul id="notification-log"></ul>
   </div>
 
   <script src="script.js"></script>
